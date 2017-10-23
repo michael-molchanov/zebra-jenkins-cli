@@ -17,5 +17,4 @@ RUN mkdir -p /root/.ssh
 ADD config/ssh /root/.ssh/config
 RUN chmod 600 /root/.ssh/config
 
-ENTRYPOINT ["./jenkins-cli-wrapper.sh"]
-CMD ["help"]
+ENTRYPOINT ["/bin/bash"]
