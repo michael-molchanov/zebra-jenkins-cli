@@ -3,14 +3,12 @@ MAINTAINER Alexander Tolstikov <tolstikov@gmail.com>
 
 USER root
 
-WORKDIR /jenkins-cli
-COPY jenkins-cli-wrapper.sh .
+ADD jenkins-cli-wrapper.sh /jenkins-cli/jenkins-cli-wrapper.sh
 
-RUN chmod +x jenkins-cli-wrapper.sh
+RUN chmod +x /jenkins-cli/jenkins-cli-wrapper.sh
 
 ENV JENKINS_URL ""
 ENV PRIVATE_KEY "/ssh/id_rsa"
-VOLUME /ssh
 
 RUN apk add --update --no-cache bash curl procps
 
