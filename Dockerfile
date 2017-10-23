@@ -40,6 +40,5 @@ RUN mkdir -p /root/.ssh
 ADD config/ssh /root/.ssh/config
 RUN chmod 600 /root/.ssh/config
 
-SHELL ["/bin/bash", "-l"]
 
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/bin/sh"]
