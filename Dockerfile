@@ -6,18 +6,11 @@ USER root
 # Install base.
 RUN apk add --update --no-cache \
   bash \
-  build-base \
   curl \
-  git \
-  libffi \
-  libffi-dev \
-  mysql-client \
   openssh \
   openssl \
   openssl-dev \
   procps \
-  postgresql-client \
-  rsync \
   tar \
   unzip \
   wget \
