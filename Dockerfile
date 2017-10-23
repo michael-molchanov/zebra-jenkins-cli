@@ -39,6 +39,3 @@ ENV PRIVATE_KEY "/ssh/id_rsa"
 RUN mkdir -p /root/.ssh
 ADD config/ssh /root/.ssh/config
 RUN chmod 600 /root/.ssh/config
-
-
-ENTRYPOINT ["/bin/sh"]
