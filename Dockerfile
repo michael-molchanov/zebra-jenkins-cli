@@ -1,6 +1,8 @@
 FROM anapsix/alpine-java:8
 MAINTAINER Alexander Tolstikov <tolstikov@gmail.com>
 
+USER root
+
 WORKDIR /jenkins-cli
 COPY jenkins-cli-wrapper.sh .
 
@@ -16,5 +18,7 @@ RUN apk add --update --no-cache bash curl procps
 RUN mkdir -p /root/.ssh
 ADD config/ssh /root/.ssh/config
 RUN chmod 600 /root/.ssh/config
+
+SHELL ["/bin/bash", "-l"]
 
 ENTRYPOINT ["/bin/bash"]
