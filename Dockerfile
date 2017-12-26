@@ -6,6 +6,7 @@ USER root
 # Install base.
 RUN apk add --update --no-cache \
   bash \
+  ca-certificates \
   curl \
   openssh \
   openssl \
@@ -14,6 +15,7 @@ RUN apk add --update --no-cache \
   tar \
   unzip \
   wget \
+  && update-ca-certificates \
   &&  rm -rf /var/lib/apt/lists/*
 
 # Install Java.
