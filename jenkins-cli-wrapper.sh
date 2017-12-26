@@ -7,9 +7,9 @@ if test -z "$JENKINS_URL"; then
 else
   if [ -f /jenkins-cli/jenkins-cli.jar ]; then
     if [ -f "$PRIVATE_KEY" ]; then
-      java -jar "$cli_jar" -s $JENKINS_URL -i $PRIVATE_KEY "$@"
+      java -jar "/jenkins-cli/jenkins-cli.jar" -s $JENKINS_URL -i $PRIVATE_KEY "$@"
     else
-      java -jar "$cli_jar" -s $JENKINS_URL "$@"
+      java -jar "/jenkins-cli/jenkins-cli.jar" -s $JENKINS_URL "$@"
     fi
   else
     url_hash=$(echo $JENKINS_URL | md5sum)
