@@ -5,7 +5,7 @@ if test -z "$JENKINS_URL"; then
   echo "JENKINS_URL environment variable is mandatory"
   exit 1
 else
-  if -f /jenkins-cli/jenkins-cli.jar; then
+  if [ -f /jenkins-cli/jenkins-cli.jar]; then
     if [ -f "$PRIVATE_KEY" ]; then
       java -jar "$cli_jar" -s $JENKINS_URL -i $PRIVATE_KEY "$@"
     else
