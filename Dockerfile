@@ -24,6 +24,7 @@ RUN apk add --update --no-cache openjdk8-jre-base \
   && rm -rf /var/lib/apt/lists/*
 
 ADD jenkins-cli-wrapper.sh /jenkins-cli/jenkins-cli-wrapper.sh
+ADD jenkins-cli.jar /jenkins-cli/jenkins-cli.jar
 
 RUN chmod +x /jenkins-cli/jenkins-cli-wrapper.sh
 
